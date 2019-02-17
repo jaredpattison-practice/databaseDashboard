@@ -1,2 +1,0 @@
-# databaseDashboard
-Created with CodeSandbox
