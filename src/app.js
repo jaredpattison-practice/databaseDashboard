@@ -12,10 +12,19 @@ class App extends React.Component {
     database.subscribe("create", payload => {
       this.updateMessage(payload);
     });
+
+    database.subscribe("update", payload => {
+      this.updateMessage(payload);
+    });
+
+    database.subscribe("delete", payload => {
+      this.updateMessage(payload);
+    });
+
   }
 
   updateMessage = message => {
-    console.log("create happened", message);
+    console.log(message);
     this.setState({ message });
   };
 
@@ -23,7 +32,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <h2>Database Actions</h2>
-        <p>Create: {this.state.message.collection}</p>
+        <p>{this.state.message.action} in {this.state.message.collection} collection</p>
         <p>ID: {this.state.message.id}</p>
       </React.Fragment>
     );
