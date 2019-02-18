@@ -39,3 +39,4 @@ Usage Notes or examples
 
 
 #### UML
+![](./assets/dashboard.jpg)
